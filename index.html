@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #4a90e2;
+    }
+    p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <body>
+    <h1>examen alfredo hernandez</h1>
+    <p>conversor de valores monetarios utez</p>
+    <p>presione un numero :</p>
+    <br />
+    <br />
+    <p>1.- pesos mexicanos a dolares "tipo de cambio 1usd =17.5 mxs</p>
+    <br />
+    <br />
+    <div></div>
+    <p>2.- pesos mexicanos a euros "tipo de cambio 1 eur= 19.2 mxn</p>
+    <p>seleccione el numero</p>
+    <br />
+    <button onclick="convertCurrency()">Convertir</button>
+
+    <script>
+      console.log("Hola onichan uwu, utez!");
+      function convertCurrency() {
+        const amount = parseFloat(prompt("Ingrese la cantidad a convertir:"));
+        const conversionRate = 1.2;
+        const convertedAmount = amount * conversionRate;
+        alert(`El monto convertido es: ${convertedAmount}`);
+      }
+      function convertToDollars() {
+        const amount = parseFloat(
+          prompt("Ingrese la cantidad en pesos mexicanos:")
+        );
+        const conversionRate = 1 / 17.5;
+        const convertedAmount = amount * conversionRate;
+        alert(`El monto en dolares es: ${convertedAmount.toFixed(2)}`);
+      }
+      function convertToEuros() {
+        const amount = parseFloat(
+          prompt("Ingrese la cantidad en pesos mexicanos:")
+        );
+        const conversionRate = 1 / 19.2;
+        const convertedAmount = amount * conversionRate;
+        alert(`El monto en euros es: ${convertedAmount.toFixed(2)}`);
+      }
+      document.querySelector("button").addEventListener("click", function () {
+        const choice = prompt(
+          "Seleccione una opción:\n1. Convertir a Dólares\n2. Convertir a Euros"
+        );
+        if (choice === "1") {
+          convertToDollars();
+        } else if (choice === "2") {
+          convertToEuros();
+        } else {
+          alert("Opcion no valida.");
+        }
+      });
+    </script>
+  </body>
+</html>
